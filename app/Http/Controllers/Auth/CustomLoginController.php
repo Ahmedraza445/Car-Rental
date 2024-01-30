@@ -15,20 +15,18 @@ class CustomLoginController extends Controller
 
     public function login(Request $request)
     {
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('username', 'password');
 
         // Check for a specific username and password combination
-        if ($credentials['email'] == 'Admin' && $credentials['password'] == '321') {
-            // Authentication passed
-            Auth::loginUsingId(1); // Assuming the user ID for 'Admin' is 1
+        if ($credentials['username'] == 'Admin' && $credentials['password'] == '321') {
 
             // Set a session variable indicating that the user is logged in
             $request->session()->put('authenticated', true);
 
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/brands');
         }
 
         // Authentication failed
-        return back()->withErrors(['email' => 'Invalid credentials']);
+        return back()->withErrors(['username' => 'Invalid credentials']);
     }
 }

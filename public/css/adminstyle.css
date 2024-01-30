@@ -1,0 +1,76 @@
+body {
+    display: flex;
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container-fluid {
+    padding: 10px;
+}
+
+.content-wrapper {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the sidebar */
+
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: 200px;
+    top: 0;
+    left: 0;
+    padding-top: 15px;
+    z-index: 1;
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+.sidebar-sticky {
+    position: relative;
+}
+
+.sidebar a {
+    padding: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #495057;
+}
+
+/* Style the DataTable */
+
+.table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Add responsive styles for smaller screens */
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .content-wrapper {
+        margin-left: 0;
+    }
+}
+
+/* Additional styling for buttons and alerts */
+
+.btn {
+    margin-right: 5px;
+}
+
+.alert {
+    margin-top: 20px;
+}

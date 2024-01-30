@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\CustomLoginController;
+use App\Http\Controllers\BrandController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,8 +28,9 @@ Route::post('/login', [CustomLoginController::class, 'login'])->name('custom.log
 
 Route::middleware(['auth.admin'])->group(function () {
     // Your protected routes go here
-    Route::get('/dashboard', function () {
-        return 'Admin Dashboard';
-    });
+    Route::get('/brands', [BrandController::class, 'index'])->name('brands.index');
+    Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
+    Route::get('/customers', [CustomerController::class, 'index'])->name('customers.index');
+    Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
 });
 
